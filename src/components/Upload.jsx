@@ -1,6 +1,7 @@
 import React from "react";
 import useActions from "../states/Actions";
-import upload from "../images/upload.png";
+// import upload from "../images/upload.png";
+import { BsCloudUpload } from "react-icons/bs";
 
 function Upload() {
   const handleUpload = useActions((state) => state.handleUpload);
@@ -9,16 +10,19 @@ function Upload() {
     <div>
       <label
         htmlFor="Upload"
-        className="bg-emerald-900 rounded font-inter py-2 px-4 m-6 cursor-pointer inline-flex"
+        className="font-inter px-2 my-3 cursor-pointer inline-flex text-zinc-300"
       >
-        Choose a file
-        <img
-          className="ml-2"
+        {/* <img
+          className=""
           src={upload}
-          height={25}
-          width={25}
+          height={30}
+          width={30}
           alt="uploadIcon"
-        ></img>
+        ></img> */}
+        <BsCloudUpload
+          className="mt-6 text-slate-300"
+          size={28}
+        ></BsCloudUpload>
       </label>
       <input
         id="Upload"

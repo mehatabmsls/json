@@ -3,6 +3,7 @@ import create from "zustand";
 const useActions = create((set, get) => ({
   File: null,
   FileName: null,
+  //function for upload
   handleUpload: (e) => {
     const fileReader = new FileReader();
     fileReader.readAsText(e.target.files[0], "UTF-8");
@@ -14,6 +15,7 @@ const useActions = create((set, get) => ({
     };
     document.getElementById("Upload").value = "";
   },
+  //function for download
   handleDownload: () => {
     const jString = `data:text/json;chatset=uft-8,${encodeURIComponent(
       JSON.stringify(get().File)

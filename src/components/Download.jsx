@@ -1,6 +1,7 @@
 import React from "react";
 import useActions from "../states/Actions";
 import save from "../images/save.png";
+import { BsDownload } from "react-icons/bs";
 
 function Download() {
   const handleDownload = useActions((state) => state.handleDownload);
@@ -8,17 +9,17 @@ function Download() {
   return (
     <div>
       <button
-        className="bg-emerald-900 rounded font-inter py-2 px-4 m-6 cursor-pointer inline-flex"
+        className="font-inter py-1 px-2  my-3 cursor-pointer inline-flex text-zinc-300"
         onClick={handleDownload}
       >
-        Save
-        <img
-          className="ml-2"
+        {/* <img
+          className=""
           src={save}
-          height={25}
-          width={25}
+          height={28}
+          width={28}
           alt="saveIcon"
-        ></img>
+        ></img> */}
+        <BsDownload className="text-slate-300" size={26}></BsDownload>
       </button>
     </div>
   );
