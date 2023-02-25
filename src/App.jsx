@@ -5,10 +5,10 @@ import Viewer from "./components/Viewer";
 import useActions from "./states/Actions";
 import { Allotment } from "allotment";
 import "allotment/dist/style.css";
-import Sample2 from "./components/Sample2";
+import Chart from "./components/Chart";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 function App() {
-  const File = useActions((state) => state.File);
   return (
     <>
       <div className=" text-white flex">
@@ -22,7 +22,11 @@ function App() {
               <Viewer></Viewer>
             </Allotment.Pane>
             <Allotment.Pane>
-              <Sample2></Sample2>
+              <TransformWrapper>
+                <TransformComponent>
+                  <Chart></Chart>
+                </TransformComponent>
+              </TransformWrapper>
             </Allotment.Pane>
           </Allotment>
         </div>
